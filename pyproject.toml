@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "pubmed_fetcher"
+version = "0.1.0"
+description = "A script to fetch research papers from PubMed and filter relevant results."
+authors = ["Sri Ram <sriramshanmugam10@gmail.com>"]
+readme = "README.md"
+packages = [{include = "pubmed_fetcher"}]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.13"  # Ensure compatibility
+requests = "^2.31.0"    # For fetching PubMed API data
+pandas = "^2.0.3"       # For processing and saving data
+beautifulsoup4 = "^4.12.3" # If needed for parsing HTML
+tqdm = "^4.67.1"
+python-dotenv = "^1.0.1"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+get-papers-list = "cli:main"
